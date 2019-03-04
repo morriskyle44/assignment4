@@ -8,7 +8,7 @@ output: github_document
 ```{r setup, include=FALSE}
 # Please note these options.
 # This tells R Markdown that we want to show code in the output document.
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = TRUE)
 # Switching off messages in the output document. 
 knitr::opts_chunk$set(message = FALSE)
 knitr::opts_chunk$set(warning = FALSE)
