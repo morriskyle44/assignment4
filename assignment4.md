@@ -13,9 +13,7 @@ Reproduce the following graphs as close as you can. For each graph, write two se
 
     ![](assignment4_files/figure-markdown_github/graph1.png)
 
-2.  Scatter plot: age and monthly earnings (20 points).
-
-The red line shows a linear fit; the blue line shows a quadratic fit. Note the size and position of points.
+2.  Scatter plot: age and monthly earnings (20 points). The red line shows a linear fit; the blue line shows a quadratic fit. Note the size and position of points.
 
     ![](assignment4_files/figure-markdown_github/graph2.png)
 
@@ -27,8 +25,6 @@ The red line shows a linear fit; the blue line shows a quadratic fit. Note the s
 
     ![](assignment4_files/figure-markdown_github/graph4.png)
 
-5.  Map: median income by UK region (20 points).
-
-This is the most difficult problem in this set. You will need to use the NUTS Level 1 shape file (available here -- <https://data.gov.uk/dataset/2aa6727d-c5f0-462a-a367-904c750bbb34/nuts-level-1-january-2018-full-clipped-boundaries-in-the-united-kingdom>) and a number of packages for producing maps from shape files. You will need to google additional information; there are multiple webpages with the code that produces similar maps.
+5.  Map: median income by UK region (20 points). This is the most difficult problem in this set. You will need to use the NUTS Level 1 shape file (available here -- <https://data.gov.uk/dataset/2aa6727d-c5f0-462a-a367-904c750bbb34/nuts-level-1-january-2018-full-clipped-boundaries-in-the-united-kingdom>) and a number of packages for producing maps from shape files. You will need to google additional information; there are multiple webpages with the code that produces similar maps.
 
     ![](assignment4_files/figure-markdown_github/graph5.png)
