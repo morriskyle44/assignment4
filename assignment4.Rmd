@@ -156,7 +156,7 @@ Reproduce the following graphs as close as you can. For each graph, write two se
       ylab("Median net monthly earnings") +
       coord_flip()
       
-    
+    #Data shows that males earned significantly more than females, and that geography seemingly does not play as significant of a role. 
     
 
     ```

@@ -149,4 +149,8 @@ Reproduce the following graphs as close as you can. For each graph, write two se
 
     ![](assignment4_files/figure-markdown_github/unnamed-chunk-5-1.png)
 
+    ``` r
+    #Data shows that males earned significantly more than females, and that geography seemingly does not play as significant of a role. 
+    ```
+
 5.  Map (20 points). This is the most difficult problem in this set. You will need to use the NUTS Level 1 shape file (available here -- <https://data.gov.uk/dataset/2aa6727d-c5f0-462a-a367-904c750bbb34/nuts-level-1-january-2018-full-clipped-boundaries-in-the-united-kingdom>) and a number of packages for producing maps from shape files. You will need to google additional information; there are multiple webpages with the code that produces similar maps.
