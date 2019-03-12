@@ -141,7 +141,7 @@ Reproduce the following graphs as close as you can. For each graph, write two se
       ggplot(aes(x = placeBorn, y = MedianIncome, fill = sex_dv)) +
       geom_bar(position = "dodge", stat= "identity") +
       scale_fill_manual(values = c("Dark Red","Dark Blue")) +
-      theme(legend.position = "top") +
+      theme(legend.position = "top", legend.title = element_blank()) +
       xlab("Country of birth") +
       ylab("Median net monthly earnings") +
       coord_flip()
