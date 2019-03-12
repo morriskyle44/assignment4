@@ -1,7 +1,7 @@
 ---
 title: "Statistical assignment 4"
-author: "[add your name here] [add your candidate number here - mandatory]"
-date: "[add date here]"
+author: "[Kyle Morrs] [056527]"
+date: "[11/03/2019]"
 output: github_document
 ---
 
@@ -22,12 +22,13 @@ First we will need to open and recode the data. I supply the code for this; you 
 
     ```{r}
 library(tidyverse)
-Data8 <- read_tsv("...h_indresp.tab")
+    
+Data8 <- read_tsv("C:/Users/morri/Documents/data/UKDA-6614-tab/tab/ukhls_w8/h_indresp.tab")
 
 Data8 <- Data8 %>%
         select(pidp, h_age_dv, h_payn_dv, h_gor_dv)
 
-Stable <- read_tsv("...xwavedat.tab")
+Stable <- read_tsv("C:/Users/morri/Documents/data/UKDA-6614-tab/tab/ukhls_wx/xwavedat.tab")
 
 Stable <- Stable %>%
         select(pidp, sex_dv, ukborn, plbornc)
@@ -77,12 +78,41 @@ Reproduce the following graphs as close as you can. For each graph, write two se
 
     ```{r}
 
+    
+    Data %>%
+      ggplot(aes(x = h_age_dv))+ 
+      geom_histogram(bins = 87) +
+      xlab ("Age")
+      ylab ("Number of Respondents")
+      
+      #Thee histogram shows the age of the respondents in relation to the number of respondents. It shows the number of respondents decreasing until roughly 25, then peaking at 50 before decreasing again 
+    
+    #Can we only figure out bins=87 through trial and error?
+    
+    
          
     ```
 
 2. Scatter plot (20 points). The red line shows a linear fit; the blue line shows a quadratic fit. Note the size and position of points.
 
     ```{r}
+    
+    Data %>%
+      
+    ggplot(aes(x = h_age_dv, y = h_payn_dv)) +
+    geom_point(position = position_jitter(width = NULL, height = NULL), size = 0.5)+
+    xlim(15, 65) +
+    geom_smooth(col = "blue")+
+    geom_smooth(method = 'lm', formula = y~x, col = 'red') +
+    xlab("Age") +
+    ylab("Monthly Earnings")
+    
+    
+    #The graph shows that as a whole higher age, higher income, albeit it a very weak relation, where as the blue line more accurately shows the income dependent on age regarding things (potentially) such as lack of experience at a younger age, hence less income, and retirment at the older age, hence less income.
+    
+    
+    
+    
 
     ```
 
@@ -90,16 +120,59 @@ Reproduce the following graphs as close as you can. For each graph, write two se
 
     ```{r}
 
+    
+    Data %>%
+      
+      filter(!is.na(placeBorn)) %>%
+             
+             
+      
+      ggplot(aes(x = h_age_dv)) +
+      geom_density(fill = 'black') +
+      facet_wrap( ~ placeBorn, ncol = 3) +
+      xlab("Age") +
+      ylab("Density")
+      
+    
+   # Shows a list of countries with the spread of age a
+    
     ```
 
 4. Ordered bar chart of summary statistics (20 points).
 
     ```{r}
+  
+    Data$placeBorn <- factor(Data$placeBorn, levels = c("Bangladesh", "Pakistan", "Poland", "Jamaica", "India", "UK", "Other", "Nigeria", "Ireland"))
+    
+      Data %>%
+      filter(!is.na(sex_dv) & !is.na(placeBorn)) %>%
+      group_by(sex_dv, placeBorn) %>%
+      summarise(MedianIncome = median(h_payn_dv, na.rm = TRUE)) %>%
+      ggplot(aes(x = placeBorn, y = MedianIncome, fill = sex_dv)) +
+      geom_bar(position = "dodge", stat= "identity") +
+      scale_fill_manual(values = c("Dark Red","Dark Blue")) +
+      theme(legend.position = "top") +
+      xlab("Country of birth") +
+      ylab("Median net monthly earnings") +
+      coord_flip()
+      
+    
+    
 
     ```
 
 5. Map (20 points). This is the most difficult problem in this set. You will need to use the NUTS Level 1 shape file (available here -- https://data.gov.uk/dataset/2aa6727d-c5f0-462a-a367-904c750bbb34/nuts-level-1-january-2018-full-clipped-boundaries-in-the-united-kingdom) and a number of packages for producing maps from shape files. You will need to google additional information; there are multiple webpages with the code that produces similar maps.
 
     ```{r}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     ```
